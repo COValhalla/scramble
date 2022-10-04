@@ -29,3 +29,13 @@ exports.categories_delete_get = function (req, res, next) {
 exports.categories_delete_post = function (req, res, next) {
   res.send('NOT IMPLEMENTED: Category delete POST');
 };
+
+// Display Category update form on GET
+exports.categories_update_get = function (req, res, next) {
+  res.send('NOT IMPLEMENTED: Category update GET');
+};
+
+// Handle Category update on POST
+exports.categories_update_post = function (req, res, next) {
+  res.send('NOT IMPLEMENTED: Category update POST');
+};

@@ -20,7 +20,7 @@ router.post('/hike/:id/update', hikes_controller.hikes_update_post);
 
 // Categories routes
 
-router.get('/', categories_controller.categories_list);
+router.get('/category', categories_controller.categories_list);
 
 router.get('/category/:id', categories_controller.categories_detail);
 
@@ -35,7 +35,7 @@ router.post(
 
 router.get('/category/:id/update', categories_controller.categories_update_get);
 router.post(
-  '/category/:id/update',
+  '/category//:id/update',
   categories_controller.categories_update_post,
 );
 
