@@ -2,7 +2,7 @@ const Hikes = require('../models/hikes');
 
 // Display all hikes
 exports.hikes_list = function (req, res, next) {
-  res.send('NOT IMPLEMENTED: Hikes list');
+  res.render('hikes');
 };
 
 // Display specific hike detail
