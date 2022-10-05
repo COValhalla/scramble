@@ -2,7 +2,18 @@ const Hikes = require('../models/hikes');
 
 // Display all hikes
 exports.hikes_list = function (req, res, next) {
-  res.render('hikes');
+  Hikes.find({}, 'name description rating miles elevation difficulty')
+    .sort([['name', 'ascending']])
+    .populate('category')
+    .exec(function (err, list_hikes) {
+      if (err) {
+        return next(err);
+      }
+      res.render('hikes', {
+        title: 'Hikes',
+        hikes_list: list_hikes,
+      });
+    });
 };
 
 // Display specific hike detail
