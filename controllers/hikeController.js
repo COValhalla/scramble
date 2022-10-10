@@ -29,7 +29,6 @@ exports.hikes_detail = function (req, res, next) {
         hike_detail: hike_detail,
       });
     });
-  // res.send('NOT IMPLEMENTED: Hikes detail: ' + req.params.id);
 };
 
 // Display hike create form on GET

@@ -7,7 +7,7 @@ const categories_controller = require('../controllers/categoryController');
 // Hikes routes
 router.get('/', hikes_controller.hikes_list);
 
-router.get('/:id', hikes_controller.hikes_detail);
+router.get('/hike/:id', hikes_controller.hikes_detail);
 
 router.get('/hike/create', hikes_controller.hikes_create_get);
 router.post('/hike/create', hikes_controller.hikes_create_post);
