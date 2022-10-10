@@ -1,4 +1,5 @@
 const Categories = require('../models/categories');
+const Hikes = require('../models/hikes');
 
 // Display list of all Categories
 exports.categories_list = function (req, res, next) {
@@ -17,7 +18,17 @@ exports.categories_list = function (req, res, next) {
 
 // Display detail page for a specific Category
 exports.categories_detail = function (req, res, next) {
-  res.send('NOT IMPLEMENTED: Category detail: ' + req.params.id);
+  Hikes.find({ category: req.params.id }, 'name description')
+    .sort([['name', 'ascending']])
+    .exec(function (err, list_hikes) {
+      if (err) {
+        return next(err);
+      }
+      res.render('categoryDetail', {
+        title: 'Hikes',
+        hikes_list: list_hikes,
+      });
+    });
 };
 
 // Display Category create form on GET
