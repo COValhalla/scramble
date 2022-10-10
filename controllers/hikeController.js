@@ -18,7 +18,18 @@ exports.hikes_list = function (req, res, next) {
 
 // Display specific hike detail
 exports.hikes_detail = function (req, res, next) {
-  res.send('NOT IMPLEMENTED: Hikes detail: ' + req.params.id);
+  Hikes.findById(req.params.id)
+    .populate('category')
+    .exec(function (err, hike_detail) {
+      if (err) {
+        return next(err);
+      }
+      res.render('hikeDetail', {
+        title: 'Hike Details',
+        hike_detail: hike_detail,
+      });
+    });
+  // res.send('NOT IMPLEMENTED: Hikes detail: ' + req.params.id);
 };
 
 // Display hike create form on GET

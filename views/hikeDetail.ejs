@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('partials/head') %>
+  </head>
+  <body class="bg-slate-700 text-white">
+    <header><%- include('partials/header') %></header>
+    <main class="flex-col p-8">
+      <h1 class="text-2xl"><%= title %></h1>
+      <div>
+        <ul>
+          <li><%= hike_detail.name %></li>
+          <li>Description: <%= hike_detail.description %></li>
+          <li>Rating: <%= hike_detail.rating %></li>
+          <li>Miles: <%= hike_detail.miles %></li>
+          <li>Elevation Change: <%= hike_detail.elevation %></li>
+          <li>Difficulty: <%= hike_detail.difficulty %></li>
+          <li>
+            Directions:
+            <a href="<%= hike_detail.directions %>">To Trailhead</a>
+          </li>
+        </ul>
+      </div>
+    </main>
+  </body>
+</html>
